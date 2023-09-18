@@ -1,0 +1,74 @@
+:root {
+  --primary: #fff;
+}
+
+.btn {
+  padding: 5px 5px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #4640BE;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 47px;
+  text-transform: capitalize;
+  width:  128px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;   
+}
+
+.btn--primary {
+  background-color: #ffffff;
+  color: #4640BE;
+ }
+ 
+
+.btn--outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 2px solid #fff;
+}
+
+.btn--medium {
+  font-size: 12px;
+  height: 40px;
+}
+
+.btn--large {
+  width:  165px; 
+  font-size: 14px;
+  min-height: 56px;
+}
+
+@media screen and (max-width : 991px) {
+  .btn--medium {
+    width: 100px;
+    height: 35px;
+  }
+  
+  .btn--large {
+    width:  130px; 
+    min-height: 45px;
+  }
+}
+
+@media screen and (max-width: 575px) { 
+  .btn--medium {
+    width: 100px;
+    height: 30px;
+  }
+  
+  .btn--large {
+    width:  115px; 
+    min-height: 40px;
+  }
+}
+
+

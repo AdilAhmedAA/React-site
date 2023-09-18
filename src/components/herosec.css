@@ -1,0 +1,137 @@
+.hero {
+    background-image:url(../../public/images/hero-image.jpg);
+    margin-top: -85px;
+}
+
+.hero .inner {
+    align-items: center;
+    justify-content: flex-end;
+    min-height: calc(100vh);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-left: 50px;
+}
+.hero-image {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+.hero-image img {
+    width: 100%;
+}
+
+.hero .hero-details {
+    max-width: 500px;
+    width: 100%;
+}
+.hero .hero-details h1 span {
+    color: #FFC656;
+}
+.hero .hero-details h1 {
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.hero .hero-details .btn-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media screen  and (max-width: 1199px){
+    .hero .inner {
+        min-height: calc(80vh);
+    
+    }
+    .hero-image {
+        max-width: 87%;
+    }
+}
+@media screen  and (max-width: 1100px){
+    .hero-image {
+        max-width: 90%;
+    }
+}
+@media screen  and (max-width: 1030px){
+    .hero-image {
+        max-width: 100%;
+    }
+}
+
+@media screen  and (max-width: 991px){
+
+    .hero .inner {
+        min-height: 100%;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 100px;
+    }
+    .hero .hero-details {
+        max-width: 100%;
+        width: 100%;
+    }
+    .hero .hero-details h1 {
+        font-size: 42px;
+    } 
+
+}
+
+@media screen and (max-width: 767px) {
+    .hero .inner {
+        grid-template-columns: 50% 1fr;
+        align-items: flex-end;
+        padding-left: 15px;
+        padding-top: 15%;
+    }
+    .hero .hero-details {
+        padding-bottom: 50px;
+    }
+    .hero .hero-details h1 {
+        font-size: 34px;
+    } 
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .hero-image img {
+        height: -webkit-fill-available;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 575px) {
+    .hero .hero-details h1 {
+        max-width: 60%;
+        position: relative;
+    }
+    .hero .inner {
+        grid-template-columns: 1fr;
+        padding-top: 20%;
+    }
+    .hero-image {
+        max-width: 250px;
+        height: auto;
+        position: absolute;
+        right: 0;
+    }
+    .hero .hero-details .btn-wrapper {
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .hero .hero-details .btn-wrapper {
+        flex-direction: column;
+    }
+    .hero .hero-details h1 {
+       font-size: 32px;
+       max-width: 100%;
+    }
+    .hero .inner {
+        padding-top: 35%;
+    }
+    .hero-image {
+        max-width: 200px;
+    }
+}

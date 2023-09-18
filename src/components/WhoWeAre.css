@@ -1,0 +1,165 @@
+.about-us {
+    padding: 80px 0;
+}
+.about-us .who-we-are {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.about-us .about-image {
+    max-width: 50%;
+    width: 100%;
+    border-radius: 40px;
+    display: flex;
+}
+.about-us .about-image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+.about-us .about-image:hover img {
+    transform: translateY(-10px);
+    box-shadow: 0px 9px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.about-us .who-we-are .head {
+    max-width: 400px;
+    width: 100%;
+}
+.head h3{
+    color: #4640BE;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px; 
+}
+
+.head h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 42px;
+    margin: 5px 0;
+}
+
+.head p {
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.about-us .about-features {
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+.about-us .features {
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    column-gap: 10%;
+    row-gap: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-us .features h4 {
+    color: #000;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 70px; 
+}
+.about-us .features p {
+    color: #4640BE;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@media screen and (max-width : 1199px) {
+    .about-us .who-we-are {
+        gap: 60px;
+    }
+    .about-us .features h4 {
+        font-size: 50px; 
+        line-height: 56px;
+    }
+    .about-us {
+        padding: 70px 0;
+    }
+}
+
+@media screen and (max-width : 991px) {
+    .about-us .about-features {
+        padding-top: 50px;
+    }
+
+    .about-us .features {
+        column-gap: 12%;
+        row-gap: 15%;
+    }
+    .about-us .features h4 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+    .head h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .about-us {
+        padding: 60px 0;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .about-us .who-we-are {
+        gap: 0;
+        flex-direction: column-reverse;
+    }
+
+    .about-us .about-image {
+        max-width: 100%;
+    }
+    .about-us .who-we-are .head{
+        max-width: 100%;
+        text-align: center;
+        padding: 0 0 30px 0;
+    }
+    .about-us {
+        padding: 50px 0;
+    }
+    .about-us .about-features {
+        flex-direction: column;
+    }
+    .about-us .about-features .features{
+        padding-bottom: 50px;
+    }
+    .about-us .features p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .about-us .features h4 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    
+}
+@media screen and (max-width: 575px){
+    .about-us .features {
+        column-gap: 5%;
+        row-gap: 12%;
+        grid-template-columns: repeat(2, 50%);
+    }
+    .about-us .features h4 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .about-us .features p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .about-us .about-features {
+        padding-top: 35px;
+    }
+}
