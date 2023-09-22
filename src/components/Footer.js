@@ -70,27 +70,29 @@ function Footer() {
             </Link>
             <small class="website-rights">TRVL © 2020</small>
           </div>
-          <div class="footer-link-items">
-            <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to="/">Testimonials</Link>
-            <Link to="/">Careers</Link>
-            <Link to="/">Investors</Link>
-            <Link to="/">Terms of Service</Link>
-          </div>
-          <div class="footer-link-items">
-            <h2>Contact Us</h2>
-            <Link to="/">Contact</Link>
-            <Link to="/">Support</Link>
-            <Link to="/">Destinations</Link>
-            <Link to="/">Sponsorships</Link>
-          </div>
-          <div class="footer-link-items">
-            <h2>Videos</h2>
-            <Link to="/">Submit Video</Link>
-            <Link to="/">Ambassadors</Link>
-            <Link to="/">Agency</Link>
-            <Link to="/">Influencer</Link>
+          <div className="footer-menu">
+            <div class="footer-link-items">
+              <h2>About Us</h2>
+              <Link to="/sign-up">How it works</Link>
+              <Link to="/">Testimonials</Link>
+              <Link to="/">Careers</Link>
+              <Link to="/">Investors</Link>
+              <Link to="/">Terms of Service</Link>
+            </div>
+            <div class="footer-link-items">
+              <h2>Contact Us</h2>
+              <Link to="/">Contact</Link>
+              <Link to="/">Support</Link>
+              <Link to="/">Destinations</Link>
+              <Link to="/">Sponsorships</Link>
+            </div>
+            <div class="footer-link-items">
+              <h2>Videos</h2>
+              <Link to="/">Submit Video</Link>
+              <Link to="/">Ambassadors</Link>
+              <Link to="/">Agency</Link>
+              <Link to="/">Influencer</Link>
+            </div>
           </div>
           <div class="footer-link-items social-media-wrap">
             <div class="social-icons">

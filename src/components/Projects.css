@@ -1,0 +1,145 @@
+
+ .Projects .pagination button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #6D66FF;
+    color: #fff;
+ }
+ .Projects button.Prev , .Projects button.Next {
+    font-size: 20px;
+ }
+ .Projects button.current-page {
+    background-color: #ffffff;
+    color: #6D66FF;
+    border: 1px solid #6D66FF;
+ }
+ .Projects .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 10px;
+ }
+
+.Projects .head {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.Projects {
+    padding: 80px 0 ;
+}
+.Project__Card a{
+    display: inline-block;
+}
+.Projects__Filter .btn--primary {
+    background-color: #6D66FF;
+    color: white;
+    margin-left: 10px;
+    width: 115px;
+    transition: all 0.3s ease-in-out;
+}
+  .Projects__Filter .css-13cymwt-control:hover {
+    border: 2px solid #6D66FF;
+} 
+.Projects__Filter .css-13cymwt-control , .Projects__Filter .css-13cymwt-control:focus ,.Projects__Filter .css-t3ipsp-control:focus{ 
+    border: 1px solid #6D66FF;
+}
+.Projects__Filter .css-12a83d4-MultiValueRemove:hover{ 
+    background-color: #6D66ff;
+    color: #fff;
+}
+.Projects__Filter .css-1p3m7a8-multiValue {
+    background-color: #fff;
+    border: 0.5px solid #6D66FF;
+    color: #6D66FF;
+} 
+.Projects__Filter .css-b62m3t-container{ 
+    width: 100%;
+}
+.Projects__Filter {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.Project__Card .details {
+    text-align: center;
+}
+.Project__Card .details h4{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+}
+.Project__Card .details span{
+    color: #6D66FF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.Project__Card {
+    max-width: 378px;
+    width: 100%;
+    margin: 0 auto;
+}
+.Project__Card img {
+    width: 100%;
+}
+.Projects__Cards {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    column-gap: 40px;
+    row-gap: 32px;
+    justify-content: center;
+}
+
+@media screen and (max-width:991px) {
+    .Projects__Cards {
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .Project__Card .details h4 {
+        font-size: 19px;
+        line-height: 25px;
+    }
+    .Project__Card .details span {
+        font-size: 15px;
+        line-height: 21px;
+    }
+    
+}
+@media screen and (max-width: 767px) {
+    .Projects__Cards {
+        grid-template-columns: repeat(2, 48%);
+    }
+    .Project__Card .details h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .Project__Card .details span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .Projects {
+        padding: 60px 0;
+    }
+}
+@media screen and (max-width: 575px) {
+    .Projects__Cards {
+        grid-template-columns: 1fr ;
+    }
+    .Projects {
+        padding: 50px 0;
+    }
+}
+
+.Projects__Filter .btn--primary:focus , .Projects__Filter .btn--primary:hover {
+    background-color: #fff;
+    color: #6D66FF;
+    border: 1px solid #6D66ff;
+}

@@ -9,7 +9,23 @@ function FSlider() {
       infinite: true,
       speed: 500,
       slidesToShow: 3,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
     return (
       <div className='Testimonials'>
@@ -18,6 +34,7 @@ function FSlider() {
             <h3>Testimonials</h3>
             <h2>Why People Love Us</h2>
           </div>
+          <div className="FSlider">
           <Slider {...settings}>
             <div>
               <Testimonial_cards 
@@ -50,6 +67,7 @@ function FSlider() {
               />
             </div>
           </Slider>
+          </div>
         </div>
       </div>
     );

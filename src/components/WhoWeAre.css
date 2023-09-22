@@ -143,6 +143,10 @@
         font-size: 40px;
         line-height: 46px;
     }
+    .head h2 {
+        font-size: 27px;
+        line-height: 35px;
+    }
     
 }
 @media screen and (max-width: 575px){
@@ -161,5 +165,9 @@
     }
     .about-us .about-features {
         padding-top: 35px;
+    }
+    .head h2 {
+        font-size: 24px;
+        line-height: 30px;
     }
 }

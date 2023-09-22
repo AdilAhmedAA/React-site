@@ -74,7 +74,7 @@ function Navbar() {
                 </li>
                 <li className='nav-item'>
                   <Link
-                    to='/'
+                    to='/Portfolio'
                     className='nav-links'
                   >
                     Portfolio
@@ -82,7 +82,7 @@ function Navbar() {
                 </li>
                 <li className='nav-item'>
                   <Link
-                    to='/'
+                    to='/Services'
                     className='nav-links'
                   >
                     Services
@@ -90,7 +90,7 @@ function Navbar() {
                 </li>
                 <li className='nav-item'>
                   <Link
-                    to='/'
+                    to='/Blog'
                     className='nav-links'
                   >
                     Blog
@@ -98,7 +98,7 @@ function Navbar() {
                 </li>
                 <li className='nav-item'>
                   <Link
-                    to='/'
+                    to='/AboutUs'
                     className='nav-links'
                   >
                     About Us
