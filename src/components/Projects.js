@@ -14,7 +14,7 @@ const options = [
   { value: 'Completed', label: 'Completed' }
 ];
 
-const projects = [
+const initialProjects = [
   {
     id: '0',
     title: 'Rocket Science',
@@ -101,6 +101,96 @@ const projects = [
   },
 ];
 
+function ProjectForm({ addProject }) {
+  const [formData, setFormData] = useState({
+    title: '',
+    desc: '',
+    type: '',
+    status: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Create a new project object with the form data.
+    const newProject = {
+      id: String(initialProjects.length), // Generate a unique ID for the new project
+      ...formData,
+    };
+
+    // Call the addProject function to add the new project to the projects array.
+    addProject(newProject);
+
+    // Clear the form inputs.
+    setFormData({
+      title: '',
+      desc: '',
+      type: '',
+      status: '',
+    });
+  };
+  return (
+    <div className="ProjectForm">
+      <h2>Add a New Project</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="desc">Description:</label>
+          <input
+            type="text"
+            id="desc"
+            name="desc"
+            value={formData.desc}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="type">Type:</label>
+          <input
+            type="text"
+            id="type"
+            name="type"
+            value={formData.type}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="status">Status:</label>
+          <input
+            type="text"
+            id="status"
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit">Add Project</button>
+      </form>
+    </div>
+  );
+}
+
 function replaceAt(string, index, char) {
     return string.substring(0, index) + char + string.substring(index + 1);
   }
@@ -112,6 +202,10 @@ function replaceAt(string, index, char) {
   }
   
   function Projects() {
+    const [projects, setProjects] = useState(() => {
+      const storedProjects = JSON.parse(localStorage.getItem('projects'));
+      return storedProjects || initialProjects;
+    });
     const [filteredProjects, setFilteredProjects] = useState([]);
     const [selectedCriteria, setSelectedCriteria] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState([]);
@@ -136,7 +230,7 @@ function replaceAt(string, index, char) {
       // Set the filteredProjects state variable.
       setFilteredProjects(filteredProjects);
       setCurrentPage(1); // Reset to the first page when criteria change.
-    }, [selectedCriteria]);
+    }, [selectedCriteria, projects]);
   
     // Calculate the index of the last project on the current page.
     const indexOfLastProject = currentPage * projectsPerPage;
@@ -179,8 +273,13 @@ function replaceAt(string, index, char) {
         setCurrentPage(currentPage - 1);
       }
     };
-  
-  
+    
+  // Function to add a new project to the projects array and update localStorage
+    const addProject = (newProject) => {
+      const updatedProjects = [...projects, newProject];
+      setProjects(updatedProjects);
+      localStorage.setItem('projects', JSON.stringify(updatedProjects));
+    };
     return (
       <div className='Projects'>
       <div className="container">
@@ -189,7 +288,7 @@ function replaceAt(string, index, char) {
             <h3>Portfolio</h3>
             <h2>Our Projects</h2>
           </div>
-
+          <ProjectForm addProject={addProject} />
           <div className="Projects__Filter">
             <Select
               isMulti
