@@ -99,27 +99,40 @@ nav .btn-wrapper {
 
 
 @media screen and (max-width: 960px) {
-  .NavbarItems {
+
+  .navbar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  nav .inner {
+    justify-content: space-between;
+  }
+  nav {
     position: relative;
   }
+  nav .btn-wrapper {
+    display: none;
+  }
 
-  .nav-menu {
+  .navbar .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    align-items: center;
+  }
+  .navbar{
+    width: 100vw;
     position: absolute;
     top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-    justify-content: flex-start;
   }
 
-  .nav-menu.active .nav-links {
+  .navbar:has(.active) .nav-links {
     color: #ffff;
   }
-  .nav-menu.active {
+  .navbar:has(.active) {
     background: #4640BE;
     left: 0;
     opacity: 1;
@@ -145,10 +158,10 @@ nav .btn-wrapper {
 
   .menu-icon {
     display: block;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    /* transform: translate(-100%, 60%); */
     font-size: 1.8rem;
     cursor: pointer;
   }
@@ -163,7 +176,7 @@ nav .btn-wrapper {
     text-align: center;
     margin: 2rem auto;
     border-radius: 4px;
-    width: 80%;
+    width: 100%;
     text-decoration: none;
     font-size: 1.5rem;
     background-color: transparent;

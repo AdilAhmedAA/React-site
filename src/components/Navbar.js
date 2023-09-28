@@ -62,10 +62,10 @@ function Navbar() {
                 </svg> 
               </Link>
             </div>
-            <div className='navbar'>
-              <div className='menu-icon' onClick={handleClick}>
+            <div className='menu-icon' onClick={handleClick}>
                 <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
               </div>
+            <div className='navbar'>
               <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
                   <Link to='/' className='nav-links'>

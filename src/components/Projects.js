@@ -3,6 +3,12 @@ import './Projects.css';
 import Projects__Card from './Projects__Card';
 import Select from 'react-select'
 import { Button } from './Button'
+/*--------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------*/
+
+import Modal from 'react-bootstrap/Modal';
+
+
 
 const options = [
   { value: 'Category', label: 'Category', disabled: true },
@@ -185,7 +191,7 @@ function ProjectForm({ addProject }) {
             required
           />
         </div>
-        <button type="submit">Add Project</button>
+        <button className='btn--primary btn--medium' type="submit">Add Project</button>
       </form>
     </div>
   );
@@ -202,10 +208,7 @@ function replaceAt(string, index, char) {
   }
   
   function Projects() {
-    const [projects, setProjects] = useState(() => {
-      const storedProjects = JSON.parse(localStorage.getItem('projects'));
-      return storedProjects || initialProjects;
-    });
+    const [projects, setProjects] = useState(initialProjects); // Use the initialProjects array directly
     const [filteredProjects, setFilteredProjects] = useState([]);
     const [selectedCriteria, setSelectedCriteria] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState([]);
@@ -280,7 +283,29 @@ function replaceAt(string, index, char) {
       setProjects(updatedProjects);
       localStorage.setItem('projects', JSON.stringify(updatedProjects));
     };
+
+    function Modalform() {
+      const [show, setShow] = useState(false);
+    
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+    
+      return (
+        <div className='Project-form'>
+          <Button onClick={handleShow} buttonStyle='btn--primary' buttonSize='btn--medium' text='Add Project' />
+    
+          <Modal  show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title><a onClick={handleClose} /></Modal.Title>
+            </Modal.Header>
+            <Modal.Body><ProjectForm addProject={addProject} /></Modal.Body>
+          </Modal>
+        </div>
+      );
+    }
+
     return (
+
       <div className='Projects'>
       <div className="container">
         <div className="inner">
@@ -288,7 +313,6 @@ function replaceAt(string, index, char) {
             <h3>Portfolio</h3>
             <h2>Our Projects</h2>
           </div>
-          <ProjectForm addProject={addProject} />
           <div className="Projects__Filter">
             <Select
               isMulti
@@ -298,6 +322,7 @@ function replaceAt(string, index, char) {
               isOptionDisabled={(option) => option.disabled}
             />
             <Button onClick={handleSelectAll} buttonStyle='btn--primary' buttonSize='btn--medium' text='Show All' />
+            <Modalform />
           </div>
 
           <div className="Projects__Cards">
