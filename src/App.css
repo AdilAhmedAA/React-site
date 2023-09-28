@@ -6,7 +6,15 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #4640be;
+}
 
+::selection {
+  color: white;
+  background: #4640be;
+}
 .container {
   max-width: 1245px;
   width: 100%;

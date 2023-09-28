@@ -1,4 +1,4 @@
-.accordion-item {
+.accordion-single {
     margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
     background-color: #4640BE;
@@ -6,7 +6,7 @@
     border: 2px solid #FFF;
     overflow: hidden;
 }
-.accordion-item .accordion-title {
+.accordion-single .accordion-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,27 +17,27 @@
     position: relative;
     z-index: 1;
 }
-.accordion-item .accordion-title h6{
+.accordion-single .accordion-title h6{
     font-size: 14px;
     line-height: 24px;
     font-weight: 500;
     margin-right: 10px;
 }
-.accordion-item .accordion-title span{
+.accordion-single .accordion-title span{
     font-size: 24px;
     font-weight: 500;
     line-height: 24px;
     transition: all 0.2s ease-in-out;
 }
 
-.accordion-item:has(.active) .accordion-title {
+.accordion-single:has(.active) .accordion-title {
     color: #000;
     background-color: #fff;
 }
-.accordion-item:has(.active) {
+.accordion-single:has(.active) {
     background: #FFF;
 }
-.accordion-item .accordion-content p {
+.accordion-single .accordion-content p {
     color: #666;
     font-size: 14px;
     font-weight: 500;
@@ -58,7 +58,7 @@
   }
 
   @media screen and (max-width:575px) {
-    .accordion-item .accordion-title {
+    .accordion-single .accordion-title {
         padding: 15px 20px;
     }
   }
