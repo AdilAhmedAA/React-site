@@ -32,6 +32,7 @@
 }
 .Project__Card a{
     display: inline-block;
+    width: inherit;
 }
 .Projects__Filter .btn--primary {
     background-color: #6D66FF;
@@ -89,6 +90,8 @@
 }
 .Project__Card img {
     width: 100%;
+    max-height: 240px;
+    object-fit: cover;
 }
 .Projects__Cards {
     display: grid;
